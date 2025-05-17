@@ -109,19 +109,19 @@
   ;; won't ask for encoding (because undecided-unix) every single keystroke
   (modify-coding-system-alist 'file "" 'utf-8)
 
-  (set-face-attribute 'default nil :family "JetBrainsMono Nerd Font" :height 105)
+  (set-face-attribute 'default nil :family "MesloLGL Nerd Font Mono" :height 160)
 
   (when (eq system-type 'darwin)
     (setq insert-directory-program "gls")
     (setq mac-command-modifier 'meta)
-    (set-face-attribute 'default nil :family "JetBrainsMono Nerd Font" :height 140))
+    (set-face-attribute 'default nil :family "MesloLGL Nerd Font Mono" :height 160))
 
   ;; Save manual customizations to other file than init.el
   (setq custom-file (locate-user-emacs-file "custom-vars.el"))
   (load custom-file 'noerror 'nomessage)
 
   ;; Set line-number-mode with relative numbering
-  (setq display-line-numbers-type 'relative)
+  (setq display-line-numbers-type 't)
   (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 
   ;; A Protesilaos life savier HACK
@@ -3082,6 +3082,7 @@ If a region is selected, prompt for additional input and pass it as a query."
                           (shell-quote-argument
                            (replace-regexp-in-string "\n" " "
                                                      (buffer-substring-no-properties
+
                                                       (region-beginning)
                                                       (region-end))))))
            (prompt (read-string "Ollama Prompt (leave it blank for interactive): " nil nil nil)))
