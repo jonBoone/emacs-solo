@@ -216,14 +216,14 @@
 
 
 ;;; AUTH-SOURCE
+;; updated auth-sources in custom-variables.el
 (use-package auth-source
   :ensure nil
   :defer t
   :config
-  (setq auth-sources
-        (list (expand-file-name ".authinfo.gpg" user-emacs-directory)))
-  (setq user-full-name "Rahul Martim Juliato"
-        user-mail-address "rahul.juliato@gmail.com")
+;;  (setq auth-sources
+;;        (list (expand-file-name ".authinfo.gpg" user-emacs-directory))
+  )
 
   ;; Use `pass` as an auth-source
   (when (file-exists-p "~/.password-store")
