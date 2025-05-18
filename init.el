@@ -318,11 +318,11 @@ It has effect when `tab-bar-tab-hints' is non-nil."
   :ensure nil
   :custom
   (rcirc-debug t)
-  (rcirc-default-nick "Lionyx")
-  (rcirc-default-user-name "Lionyx")
-  (rcirc-default-full-name "Lionyx")
+  (rcirc-default-nick "IPmonger")
+  (rcirc-default-user-name "Jon Boone")
+  (rcirc-default-full-name "Jon Boone")
   (rcirc-server-alist `(("irc.libera.chat"
-                         :channels ("#emacs" "#systemcrafters")
+                         :channels ("#common-lisp #emacs" "#systemcrafters")
                          :port 6697
                          :encryption tls)))
   (rcirc-reconnect-delay 5)
@@ -343,7 +343,7 @@ It has effect when `tab-bar-tab-hints' is non-nil."
   (erc-join-buffer 'window)
   (erc-hide-list '("JOIN" "PART" "QUIT"))
   (erc-timestamp-format "[%H:%M]")
-  (erc-autojoin-channels-alist '((".*\\.libera\\.chat" "#emacs" "#systemcrafters")))
+  (erc-autojoin-channels-alist '((".*\\.libera\\.chat" "#common-lisp #emacs" "#systemcrafters")))
   :init
   (with-eval-after-load 'erc
     (add-to-list 'erc-modules 'sasl))
@@ -354,7 +354,7 @@ It has effect when `tab-bar-tab-hints' is non-nil."
     (interactive)
     (erc-tls :server "irc.libera.chat"
              :port 6697
-             :user "Lionyx"
+             :user "IPmonger"
              :password ""
              :client-certificate
              (list
